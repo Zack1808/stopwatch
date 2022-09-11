@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Importing the style file
+import "../css/DisplayClock.css";
+
 // Creating the DisplayClock component;
 const DisplayClock = ({ time }) => {
     return (
