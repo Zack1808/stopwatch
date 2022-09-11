@@ -15,8 +15,10 @@ const App = () => {
     const [status, setStatus] = useState(false)
     const [stopButtonPressed, setStopButtonPressed] = useState(false)
 
+    // Temporary variables that store the current time
     var timeMs = time.ms, timeS = time.s, timeM = time.m, timeH = time.h;
 
+    // Funciton that starts the timer
     const start = () => {
         timerRunnign();
         setInterv(setInterval(timerRunnign, 10));
@@ -24,11 +26,13 @@ const App = () => {
         setStopButtonPressed(false);
     } 
 
+    // Function that stops the timer
     const stop = () => {
         clearInterval(interv)
         setStopButtonPressed(true)
     }
 
+    // Function that resets the timer to 0
     const reset = () => {
         setTime({ms: 0, s: 0, m: 0, h: 0});
         clearInterval(interv);
@@ -36,6 +40,7 @@ const App = () => {
         setStopButtonPressed(false)
     }
 
+    // Function that increases the timers value 
     const timerRunnign = () => {
         if(timeM === 60) {
             timeH++;
