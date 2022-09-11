@@ -29,6 +29,13 @@ const App = () => {
         setStopButtonPressed(true)
     }
 
+    const reset = () => {
+        setTime({ms: 0, s: 0, m: 0, h: 0});
+        clearInterval(interv);
+        setStatus(false);
+        setStopButtonPressed(false)
+    }
+
     const timerRunnign = () => {
         if(timeM === 60) {
             timeH++;
@@ -56,7 +63,7 @@ const App = () => {
                         (
                             <div>
                                 <Button text={stopButtonPressed ? "resume": "stop"} color="blue" handleOperation={stopButtonPressed ? start : stop} />
-                                <Button text="reset " color="red" />
+                                <Button text="reset " color="red" handleOperation={reset} />
                             </div>
                         ) : 
                         (
