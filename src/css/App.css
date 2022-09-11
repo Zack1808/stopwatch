@@ -13,7 +13,11 @@ body {
     max-width: 600px;
     width: 90%;
     height: 500px;
-    margin: 30px auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .clock-holder {
