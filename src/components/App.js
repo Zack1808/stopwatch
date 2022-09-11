@@ -13,6 +13,7 @@ const App = () => {
     const [time, setTime] = useState({ms: 0, s: 0, m: 0, h: 0});
     const [interv, setInterv] = useState();
     const [status, setStatus] = useState(false)
+    const [stopButtonPressed, setStopButtonPressed] = useState(false)
 
     var timeMs = time.ms, timeS = time.s, timeM = time.m, timeH = time.h;
 
@@ -20,7 +21,13 @@ const App = () => {
         timerRunnign();
         setInterv(setInterval(timerRunnign, 10));
         setStatus(true)
-    }   
+        setStopButtonPressed(false);
+    } 
+
+    const stop = () => {
+        clearInterval(interv)
+        setStopButtonPressed(true)
+    }
 
     const timerRunnign = () => {
         if(timeM === 60) {
@@ -48,8 +55,8 @@ const App = () => {
                         status ? 
                         (
                             <div>
-                                <Button text="stop" color="blue" />
-                                <Button text="reset" color="red" />
+                                <Button text={stopButtonPressed ? "resume": "stop"} color="blue" handleOperation={stopButtonPressed ? start : stop} />
+                                <Button text="reset " color="red" />
                             </div>
                         ) : 
                         (
