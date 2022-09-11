@@ -11,11 +11,15 @@ import '../css/App.css';
 const App = () => {
 
     const [time, setTime] = useState({ms: 0, s: 0, m: 0, h: 0});
+    const [interv, setInterv] = useState();
+    const [status, setStatus] = useState(false)
+
     var timeMs = time.ms, timeS = time.s, timeM = time.m, timeH = time.h;
 
     const start = () => {
         timerRunnign();
-        setInterval(timerRunnign, 10)
+        setInterv(setInterval(timerRunnign, 10));
+        setStatus(true)
     }   
 
     const timerRunnign = () => {
@@ -40,7 +44,18 @@ const App = () => {
             <div className="clock-holder">
                 <div className="stopwatch">
                     <DisplayClock time={time} />
-                    <Button text="start" color="green" />
+                    {
+                        status ? 
+                        (
+                            <div>
+                                <Button text="stop" color="blue" />
+                                <Button text="reset" color="red" />
+                            </div>
+                        ) : 
+                        (
+                            <Button text="start" color="green" handleOperation={start} />
+                        )
+                    }
                 </div>
             </div>
         </div>
