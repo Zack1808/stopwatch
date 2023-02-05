@@ -1,10 +1,51 @@
-.stopwatch span {
-    background: #00aba9;
-    color: #fff;
-    display: inline-block;
-    font-family: monospace;
-    font-size: 22px;
-    padding: 20px;
-    border-radius: 5px;
-    width: 70px;
+.clock {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  background-color: rgb(30, 30, 30);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  outline: 6px solid var(--light);
+}
+
+.numbers {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.numbers .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+  color: var(--light);
+  transform: rotate(calc(6deg * var(--i)));
+}
+
+.pointer {
+  width: 75%;
+  height: 75%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  transition: transform 1s linear;
+}
+
+.point {
+  height: 50%;
+  width: 10px;
+  background-color: red;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }

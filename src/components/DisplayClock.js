@@ -1,18 +1,62 @@
-import React from 'react';
+import React from "react";
 
 // Importing the style file
 import "../css/DisplayClock.css";
 
 // Creating the DisplayClock component;
-const DisplayClock = ({ time }) => {
-    return (
-        <div>
-            <span>{(time.h >= 10) ? time.h : "0" + time.h}</span>&nbsp;:&nbsp;
-            <span>{(time.m >= 10) ? time.m : "0" + time.m}</span>&nbsp;:&nbsp;
-            <span>{(time.s >= 10) ? time.s : "0" + time.s}</span>&nbsp;:&nbsp;
-            <span>{(time.ms >= 10) ? time.ms : "0" + time.ms}</span>
+const DisplayClock = ({ time, test }) => {
+  return (
+    <div className="clock">
+      <div className="numbers">
+        <div className="number" style={{ "--i": 5 }}>
+          5
         </div>
-    )
-}
+        <div className="number" style={{ "--i": 10 }}>
+          10
+        </div>
+        <div className="number" style={{ "--i": 15 }}>
+          15
+        </div>
+        <div className="number" style={{ "--i": 20 }}>
+          20
+        </div>
+        <div className="number" style={{ "--i": 25 }}>
+          25
+        </div>
+        <div className="number" style={{ "--i": 30 }}>
+          30
+        </div>
+        <div className="number" style={{ "--i": 35 }}>
+          35
+        </div>
+        <div className="number" style={{ "--i": 40 }}>
+          40
+        </div>
+        <div className="number" style={{ "--i": 45 }}>
+          45
+        </div>
+        <div className="number" style={{ "--i": 50 }}>
+          50
+        </div>
+        <div className="number" style={{ "--i": 55 }}>
+          55
+        </div>
+        <div className="number" style={{ "--i": 60 }}>
+          60
+        </div>
+      </div>
+      <div
+        className="pointer"
+        style={{
+          transform: time.s
+            ? `rotate(calc(6deg * ${time.s}))`
+            : `rotate(calc(0.06deg * ${time.ms}))`,
+        }}
+      >
+        <div className="point" onClick={test}></div>
+      </div>
+    </div>
+  );
+};
 
 export default DisplayClock;
