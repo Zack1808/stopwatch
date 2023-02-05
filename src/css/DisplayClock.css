@@ -1,5 +1,5 @@
 .clock {
-  width: 100%;
+  width: 90%;
   max-width: 300px;
   aspect-ratio: 1 / 1;
   background-color: rgb(30, 30, 30);
@@ -37,7 +37,7 @@
   display: flex;
   justify-content: center;
   align-items: start;
-  transition: transform 1s linear;
+  z-index: 1;
 }
 
 .point {
@@ -48,4 +48,35 @@
   border-top-right-radius: 50%;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.time-display {
+  width: 65%;
+  height: 60%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 30px;
+  color: var(--light);
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark);
+  font-size: 1.7em;
+  padding: 5px;
+  width: 100%;
+}
+
+.time span {
+  display: flex;
+  justify-content: end;
+  width: 80%;
+}
+
+.time span:last-child {
+  width: 100%;
 }

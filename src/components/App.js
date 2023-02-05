@@ -10,6 +10,7 @@ import "../css/App.css";
 // Creating the App component
 const App = () => {
   const [time, setTime] = useState({ ms: 0, s: 0, m: 0, h: 0 });
+  const [pointerTime, setPointerTime] = useState(time.s);
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(false);
   const [stopButtonPressed, setStopButtonPressed] = useState(false);
@@ -22,8 +23,8 @@ const App = () => {
 
   // Funciton that starts the timer
   const start = () => {
-    timerRunnign();
-    setInterv(setInterval(timerRunnign, 10));
+    timerRunning();
+    setInterv(setInterval(timerRunning, 10));
     setStatus(true);
     setStopButtonPressed(false);
   };
@@ -40,10 +41,11 @@ const App = () => {
     clearInterval(interv);
     setStatus(false);
     setStopButtonPressed(false);
+    setPointerTime(0);
   };
 
   // Function that increases the timers value
-  const timerRunnign = () => {
+  const timerRunning = () => {
     if (timeM === 60) {
       timeH++;
       timeM = 0;
@@ -54,6 +56,7 @@ const App = () => {
     }
     if (timeMs === 100) {
       timeS++;
+      setPointerTime((prevState) => prevState + 1);
       timeMs = 0;
     }
     timeMs++;
@@ -64,7 +67,19 @@ const App = () => {
     <div className="main-section">
       <div className="clock-holder">
         <div className="stopwatch">
-          <DisplayClock time={time} test={start} />
+          <DisplayClock time={time} pointer={pointerTime} status={status} />
+          {status ? (
+            <div>
+              <Button
+                text={stopButtonPressed ? "resume" : "stop"}
+                color="blue"
+                handleOperation={stopButtonPressed ? start : stop}
+              />
+              <Button text="reset " color="red" handleOperation={reset} />
+            </div>
+          ) : (
+            <Button text="start" color="green" handleOperation={start} />
+          )}
         </div>
       </div>
     </div>

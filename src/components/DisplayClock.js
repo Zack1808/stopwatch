@@ -4,7 +4,7 @@ import React from "react";
 import "../css/DisplayClock.css";
 
 // Creating the DisplayClock component;
-const DisplayClock = ({ time, test }) => {
+const DisplayClock = ({ time, pointer, status }) => {
   return (
     <div className="clock">
       <div className="numbers">
@@ -48,12 +48,17 @@ const DisplayClock = ({ time, test }) => {
       <div
         className="pointer"
         style={{
-          transform: time.s
-            ? `rotate(calc(6deg * ${time.s}))`
-            : `rotate(calc(0.06deg * ${time.ms}))`,
+          transform: status && `rotate(calc(6deg * ${pointer}))`,
         }}
       >
-        <div className="point" onClick={test}></div>
+        <div className="point"></div>
+      </div>
+      <div className="time-display">
+        <div className="time">
+          <span>{time.m >= 10 ? time.m : `0${time.m}`}</span>:
+          <span>{time.s >= 10 ? time.s : `0${time.s}`}</span>:
+          <span>{time.ms >= 10 ? time.ms : `0${time.ms}`}</span>
+        </div>
       </div>
     </div>
   );

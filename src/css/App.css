@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
-*,
-*::before,
-*::after {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -16,30 +14,26 @@
   --light: #fff;
 }
 
-body {
-  background: var(--dark);
-}
-
 .main-section {
-  background: transparent;
-  max-width: 600px;
-  width: 90%;
-  height: 500px;
+  background: var(--dark);
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+  border: 1px solid #000;
+  overflow: hidden;
 }
 
 .clock-holder {
   width: 100%;
-  margin: 30px auto;
 }
 
 .stopwatch {
-  padding: 60px 0;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 20px;
 }
