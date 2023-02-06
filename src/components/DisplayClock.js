@@ -57,7 +57,9 @@ const DisplayClock = ({ time, pointer, status }) => {
         <div className="time">
           <span>{time.m >= 10 ? time.m : `0${time.m}`}</span>:
           <span>{time.s >= 10 ? time.s : `0${time.s}`}</span>:
-          <span>{time.ms >= 10 ? time.ms : `0${time.ms}`}</span>
+          <span style={{ justifyContent: status ? "end" : "start" }}>
+            {time.ms >= 10 ? time.ms : `0${time.ms}`}
+          </span>
         </div>
       </div>
     </div>
