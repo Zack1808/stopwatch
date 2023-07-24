@@ -1,23 +1,59 @@
-# Stopwatch  App
+# Stopwatch App
 
-## About the app
+<p align="center"><img src="./public/stopwatch_preview_1.png" rel="Preview of the stopwatch: not active" /></p>
+<p align="center"><img src="./public/stopwatch_preview_2.png" rel="Preview of the stopwatch: active" /></p>
 
-This is a simple stopwatch app that will count for how long the timer has been started. 
-The user is able to stop the timer and resume it, but is also able to reset the timer completely
-The app is mobile compatible (responsive).
-The app was published at [github pages](https://zack1808.github.io/stopwatch).
+## Description
+
+This is a simple React based stopwatch app that allows the user to keep track of time with a simple and user-friendly stopwatch. Whether they need to time a task, measure an event, or simply want to check the time elapsed, this stopwatch has got them covered.
+
+## Features
+
+- Start: the stopwatch starts the time tracking
+- Stop: the stopwach stops the time tracking
+- Resume: the stopwatch resumes the time tracking from the last recorded time
+- Reset: the stopwatch resets for a restart
+- Responsive design to adapt to different screen sizes.
+
+## Live demo
+
+You can try out the Stopwatch App by visiting the [live demo](https://zack1808.github.io/stopwatch/)
 
 ## How to run the app
 
-You can find the app up and running at [https://zack1808.github.io/stopwatch](https://zack1808.github.io/stopwatch).
+If you want to run the app localy:
 
-If you want to run the app localy, you can clone the repository. 
-After cloning and entering the repository, run the command:
+#### 1. Clone the repository
 
-### `npm install`
+- HTTPS: `git clone https://github.com/Zack1808/stopwatch.git`
+- SSH: `git clone git@github.com:Zack1808/stopwatch.git`
+- GitHub CLI: `gh repo clone Zack1808/stopwatch`
 
-After the exectuion of the command is completed, run the followig command:
+#### 2. Enter the project directory
 
-### `npm start`
+`cd stopwatch`
+
+#### 3. Allow the app to install the necessary packages (Node.js has to be installed on the device)
+
+`npm install`
+
+#### 4. Start the app
+
+`npm start`
 
 After execution, the localhost server will startup and a browser window will open, previewing the stopwatch app.
+
+## Contribution
+
+Contributions to the Stopwatch project are welcome. If you find any issues or want to add new features, feel free to create a pull request. Make sure to follow the project's coding conventions and provide detailed information about your changes.
+
+## Contact
+
+If you have any questions or suggestions, you can reach me via:
+
+- Mail: jeanpierrenovak23@gmail.com
+- My portfolio: [jeanpierrenovak.netlify.app](https://jeanpierrenovak.netlify.app)
+
+---
+
+Happy timing!
